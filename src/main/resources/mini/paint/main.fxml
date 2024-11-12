@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="MainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mini.paint.Controller">
+   <children>
+      <GridPane prefHeight="115.0" prefWidth="1200.0" style="-fx-background-color: #ADD8E6;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" />
+            <ColumnConstraints hgrow="ALWAYS" />
+            <ColumnConstraints hgrow="ALWAYS" />
+            <ColumnConstraints hgrow="ALWAYS" />
+            <ColumnConstraints hgrow="ALWAYS" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints vgrow="ALWAYS" />
+         </rowConstraints>
+         <children>
+            <!-- Set MaxHeight to Double.MAX_VALUE for all buttons -->
+            <MenuButton fx:id="MENU_FILE" alignment="CENTER" maxHeight="1.7976931348623157E308" mnemonicParsing="false" prefWidth="150.0" text="FIle" GridPane.columnIndex="0">
+               <items>
+                  <MenuItem fx:id="FILE_SAVE" mnemonicParsing="false" text="Save" onAction='#SAVE' />
+                  <MenuItem fx:id="FILE_OPEN" mnemonicParsing="false" text="Open" onAction='#OPEN' />
+               </items>
+            </MenuButton>
+            <Button fx:id="BTN_INFO" alignment="CENTER" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#ON_CLICK_INFO" prefWidth="150.0" text="Info" GridPane.columnIndex="1" />
+            <Button fx:id="BTN_C" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#ON_CLICK_C" prefWidth="150.0" GridPane.columnIndex="2">
+               <graphic>
+                  <ImageView fx:id="IMG_C" blendMode="MULTIPLY" fitHeight="107.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@circle_image.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="BTN_R" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#ON_CLICK_R" prefWidth="150.0" GridPane.columnIndex="3">
+               <graphic>
+                  <ImageView fx:id="IMG_R" blendMode="MULTIPLY" fitHeight="107.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@rectangle_image.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="BTN_T" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#ON_CLICK_T" prefWidth="150.0" GridPane.columnIndex="4">
+               <graphic>
+                  <ImageView fx:id="IMG_T" blendMode="DARKEN" fitHeight="107.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@triangle_image.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5">
+               <children>
+                  <Button fx:id="BTN_UDNO" mnemonicParsing="false" onAction="#UNDO" prefHeight="57.0" prefWidth="158.0" text="Undo" />
+                  <Button fx:id="BTN_CLEAR" mnemonicParsing="false" onAction="#CLEAR" prefHeight="62.0" prefWidth="158.0" text="Clear" />
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+      <AnchorPane fx:id="BOARD" style="-fx-border-color: green; -fx-border-width: 10px; -fx-border-radius: 5px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="115.0" />
+   </children>
+</AnchorPane>
